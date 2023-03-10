@@ -47,52 +47,6 @@ public abstract class TrainingList
 }
 
 /* ------------------------------ 
- * 二の腕トレーニング
- * ------------------------------ */
-public class ArmTrainingList : TrainingList
-{
-    public override TrainingInfo[] CreateList()
-    {
-        var result = new List<TrainingInfo>();
-
-        // 必要なトレーニングを追加
-        result.Add(new TrainingInfo("クローズスタンス\nプッシュアップ", "TrainingIcon/Arm/CloseStansPushUp", 5)); // 5
-        result.Add(new TrainingInfo("アームカール", "TrainingIcon/Arm/ArmeCurl", 2)); // 2
-        result.Add(new TrainingInfo("リバースプッシュアップ", "TrainingIcon/Arm/ReversePushUp", 5)); // 5
-        result.Add(new TrainingInfo("レッグプルアームカール", "TrainingIcon/Arm/LegPullArmCurl", 1)); // 1
-        result.Add(new TrainingInfo("キックバック", "TrainingIcon/Arm/KickBuck", 2)); // 2
-        result.Add(new TrainingInfo("レッグプル\nコンセントレーションカール（右）", "TrainingIcon/Arm/LegPullConcentrationCurl", 2)); // 2
-        result.Add(new TrainingInfo("レッグプル\nコンセントレーションカール（左）", "TrainingIcon/Arm/LegPullConcentrationCurlRight",2)); // 2
-        result.Add(new TrainingInfo("カール&プレス（右）", "TrainingIcon/Arm/CurlPress",1)); // 1
-        result.Add(new TrainingInfo("カール&プレス（左）", "TrainingIcon/Arm/CurlPressReverse",1)); // 1
-        
-        return result.ToArray();
-    }
-}
-
-/* ------------------------------ 
- * 腹筋トレーニング
- * ------------------------------ */
-public class SitUpTrainingList : TrainingList
-{
-    public override TrainingInfo[] CreateList()
-    {
-        var result = new List<TrainingInfo>();
-
-        // 必要なトレーニングを追加
-        result.Add(new TrainingInfo("シットアップ", "TrainingIcon/SitUp/SitUp", 3));
-        result.Add(new TrainingInfo("クランチ", "TrainingIcon/SitUp/Crunch", 3));
-        result.Add(new TrainingInfo("ニートゥーチェスト", "TrainingIcon/SitUp/NeatToChest", 3));
-        result.Add(new TrainingInfo("ツイストレッグ\nライズ", "TrainingIcon/SitUp/TwistLegRaise", 2));
-        result.Add(new TrainingInfo("バイシクルクランチ", "TrainingIcon/SitUp/BicycleCrunch", 5));
-        result.Add(new TrainingInfo("プランク", "TrainingIcon/SitUp/Plank", 4));
-        result.Add(new TrainingInfo("マウンテンクライマー", "TrainingIcon/SitUp/MountainClimber", 5));
-        
-        return result.ToArray();
-    }
-}
-
-/* ------------------------------ 
  * ウォーミングアップ
  * ------------------------------ */
 public class WarmingUpTrainingList : TrainingList
