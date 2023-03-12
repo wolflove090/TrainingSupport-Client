@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 1102107768}
   - component: {fileID: 1102107767}
   m_Layer: 0
-  m_Name: Label
+  m_Name: ApplaudLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1926,6 +1926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScreenTap: {fileID: 870722724}
+  ApplaudLabel: {fileID: 1102107767}
 --- !u!114 &1434521749
 MonoBehaviour:
   m_ObjectHideFlags: 0

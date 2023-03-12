@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Networking;
 
 public class MainController : ControllerBase<MainViewModel>
 {
@@ -94,10 +94,10 @@ public class ViewChangeManager
         this._ChangeViewAction = action;
     }
 
-    public void ChangeView(SceneType type)
+    public void ChangeView(SceneType type, ViewActiveLinker linker = null)
     {
         Debug.Log("ChangeScene");
-        this._ChangeViewAction(type, null);
+        this._ChangeViewAction(type, linker);
     }
 
     // 腕のトレーニング開始

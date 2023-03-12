@@ -14,6 +14,8 @@ namespace TrainingView
         ITimer _CurrentTimer;
         bool _IsPouse;
 
+        string _ApplaudMessage;
+
         // Start
         protected override void _OnStart()
         {
@@ -57,7 +59,10 @@ namespace TrainingView
             // 終了したらnullになる
             if(this._CurrentTimer == null)
             {
-                this._Linker.ViewChangeManager.ChangeView(ViewChangeManager.SceneType.Complete);
+                this._Linker.ViewChangeManager.ChangeView(ViewChangeManager.SceneType.Complete, new CompleteViewActiveLinker()
+                {
+                    ApplaudMessage = this._ApplaudMessage,
+                });
                 return;
             }
 
@@ -103,6 +108,11 @@ namespace TrainingView
             this.gameObject.SetActive(true);
             this._ViewModel.Pouse.SetActive(this._IsPouse);
             this._ViewModel.BackButton_Obj.SetActive(this._IsPouse);
+
+            // ChatGPTから完了メッセージを取得
+            ChatGPTSender.Send("トレーニングした後にかけるべき労いの言葉を簡潔に。女子マネージャーのように", (result) => {
+                this._ApplaudMessage = result;
+            });
 
             // BGMの再生
             SoundManager.PlayBgm(SoundManager.Bgm.Training);

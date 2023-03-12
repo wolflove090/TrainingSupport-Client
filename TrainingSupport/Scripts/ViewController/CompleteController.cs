@@ -21,9 +21,20 @@ public class CompleteController : ChildController<CompleteViewModel, CompleteLin
 
     void IView.Active(ViewActiveLinker linker)
     {
+        var completeLinker = linker as CompleteViewActiveLinker;
+        if(completeLinker == null)
+            throw new System.Exception("リンカーを変換できなかった");
+
         SoundManager.PlaySe(SoundManager.Se.Fanfare);
 
         Debug.Log("コンプリート画面");
         this.gameObject.SetActive(true);
+        this._ViewModel.ApplaudLabel.text = completeLinker.ApplaudMessage;
     }
+}
+
+// アクティブ時の引数を受け取る
+public class CompleteViewActiveLinker : ViewActiveLinker
+{
+    public string ApplaudMessage;
 }
