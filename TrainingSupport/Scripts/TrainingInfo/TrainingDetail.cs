@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrainingInfo
+public class TrainingDetail
 {
     readonly public string Name;
     readonly public Sprite Icon;
     readonly public int CoinNum;
 
-    public TrainingInfo(string name, string iconPath, int coin)
+    public TrainingDetail(string name, string iconPath, int coin)
     {
         this.Name = name;
         this.Icon = Resources.Load<Sprite>(iconPath);

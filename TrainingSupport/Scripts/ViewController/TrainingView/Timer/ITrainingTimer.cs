@@ -35,15 +35,17 @@ namespace TrainingView
     class IntervalTimer : ITrainingTimer
     {
         readonly TrainingViewData _Next;
+        readonly int _IntervalTimeSeconds;
 
         public IntervalTimer(TrainingViewData model)
         {
             this._Next = new TrainingViewData(model, true);
+            this._IntervalTimeSeconds = model.IntervalTimeSeconds;
         }
 
         float ITrainingTimer.GetPlayTime()
         {
-            return 10f;
+            return this._IntervalTimeSeconds;
         }
 
         TrainingViewData ITrainingTimer.GetTrainingViewData()

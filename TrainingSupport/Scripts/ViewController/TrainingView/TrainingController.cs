@@ -90,9 +90,9 @@ namespace TrainingView
 
             // トレーニング項目の作成
             this._TrainingList = new List<TrainingViewData>();
-            foreach(var info in trainingLinker.TrainingInfos)
+            foreach(var info in trainingLinker.TrainingInfo.GetTrainingList())
             {
-                this._TrainingList.Add(new TrainingViewData(info));
+                this._TrainingList.Add(new TrainingViewData(info, trainingLinker.TrainingInfo.IntervalTimeSeconds()));
             }
 
             // 各タイマーの作成
@@ -122,7 +122,7 @@ namespace TrainingView
     // アクティブ時の引数を受け取る
     public class TrainingViewActiveLinker : ViewActiveLinker
     {
-        public TrainingInfo[] TrainingInfos;
+        public ITrainingInfo TrainingInfo;
     }
 }
 

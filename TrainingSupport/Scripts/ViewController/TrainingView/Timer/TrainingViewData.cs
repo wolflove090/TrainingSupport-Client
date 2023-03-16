@@ -15,6 +15,7 @@ namespace TrainingView
         readonly public Sprite Icon;
         readonly public int CoinNum;
         readonly public bool IsInterval;
+        readonly public int IntervalTimeSeconds = 10;
 
         TrainingViewData(string name, Sprite icon, bool isInterval)
         {
@@ -24,13 +25,14 @@ namespace TrainingView
         }
 
         // トレーニング項目生成
-        public TrainingViewData(TrainingInfo info)
+        public TrainingViewData(TrainingDetail info, int intervalTimeSec)
         {
             this.Name = info.Name;
             this.Icon = info.Icon;
             this.CoinNum = info.CoinNum;
 
             this.IsInterval = false;
+            this.IntervalTimeSeconds = intervalTimeSec;
         }
 
         public TrainingViewData(TrainingViewData viewData, bool isInterval)

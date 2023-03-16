@@ -105,7 +105,7 @@ public class ViewChangeManager
     {
         var linker = new TrainingView.TrainingViewActiveLinker();
         // 腕トレーニングリストを作成
-        linker.TrainingInfos = TrainingList.CreateTrainingList(TrainingList.TrainingType.Arm);
+        linker.TrainingInfo = new ArmTrainingInfo();
 
         this._ChangeViewAction(SceneType.Training, linker);
     }
@@ -115,7 +115,7 @@ public class ViewChangeManager
     {
         var linker = new TrainingView.TrainingViewActiveLinker();
         // 腹筋トレーニングリストを作成
-        linker.TrainingInfos = TrainingList.CreateTrainingList(TrainingList.TrainingType.SitUp);
+        linker.TrainingInfo = new SitUpTrainingInfo();
 
         this._ChangeViewAction(SceneType.Training, linker);
     }
@@ -125,7 +125,7 @@ public class ViewChangeManager
     {
         var linker = new TrainingView.TrainingViewActiveLinker();
         // 腹筋トレーニングリストを作成
-        linker.TrainingInfos = TrainingList.CreateTrainingList(TrainingList.TrainingType.WarmingUp);
+        linker.TrainingInfo = new WarmingUpTrainingInfo();
 
         this._ChangeViewAction(SceneType.Training, linker);
     }
